@@ -45,6 +45,11 @@ a{
     font-weight: 400;
     letter-spacing: -1.4px;
     margin-bottom: 25px;
+    @media screen and (min-width: 800px){
+        font-size: 2.7em;
+        letter-spacing: -1.7px;
+        margin-bottom: 35px;
+    }
 }
 .page-intro{
     font-size: 1.3em;
@@ -81,17 +86,25 @@ a{
     display: block;
     background-color: white;
     border-radius: 6px;
-    padding: 25px;
+    padding: 30px;
     box-shadow: 0px 4px 3px -1px transparentize($shadowBlue,0.8);
     margin-bottom: 15px;
     // In case panel is an anchor element
     text-decoration: none;
+    @media screen and (min-width: 800px){
+        padding: 45px;
+    }
 }
 .panel__title{
     font-weight: 400;
     font-size: 1.3em;
-    margin-bottom: 30px;
-    letter-spacing: -0.7px
+    margin-bottom: 40px;
+    letter-spacing: -0.7px;
+    @media screen and (min-width: 800px){
+        margin-bottom: 50px;
+        font-size: 1.6em;
+        letter-spacing: -1px;
+    }
 }
 
 // Grids
@@ -106,6 +119,8 @@ a{
     padding-top: 40px;
     padding-bottom: 40px;
     @media screen and (min-width: 800px){
+        padding-top: 80px;
+        padding-bottom: 80px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-column-gap: 15px;

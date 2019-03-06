@@ -27,10 +27,11 @@
 
   <div class="form-field">
     <%= form.label(:address, "Other contact details", {class: "form-label form-label--optional"}) %>
+    <p class="form-optional">Optional</p>
     <%= form.text_area(:address, {class: "form-input", rows: "4"}) %>
-    <p class="form-hint">Optional. Will be printed on invoices</p>
+    <p class="form-hint">Will be printed on invoices</p>
   </div>
 
-  <%= form.submit(class: "button") %>
+  <%= form.submit("Create & finish", {class: "button"}) %>
 
 <% end %>
