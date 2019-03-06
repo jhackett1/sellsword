@@ -1,0 +1,21 @@
+// Global and helper methods
+*{
+    font-family: $font-stack;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: $bg;
+}
+
+.container{
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+    color: $grey
+}

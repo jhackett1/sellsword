@@ -1,31 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Projects</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Address</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<section class="recent-projects container">
+  <h2 class="section-title recent-projects__title">Recent projects</h2>
 
-  <tbody>
+  <%= link_to 'New project', new_project_path %>
+
+  <div class="recent-projects__list">
     <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.name %></td>
-        <td><%= project.email %></td>
-        <td><%= project.address %></td>
+      <div class="recent-projects__project panel">
+        <h3 class="recent-projects__name"><%= project.name %></h3>
+        <td>Created <%= time_ago_in_words project.created_at %> ago</td>
         <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
 
-<br>
-
-<%= link_to 'New Project', new_project_path %>
+</section>
