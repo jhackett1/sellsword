@@ -1,8 +1,9 @@
 <%= form_with(model: project, local: true) do |form| %>
-  <% if project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
+  <%# Error summary %>
+  <% if project.errors.any? %>
+    <div class="alert alert--error">
+      <h2><%= pluralize(project.errors.count, "error") %> prevented this project from being saved</h2>
       <ul>
       <% project.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -27,6 +28,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit(class: "button") %>
   </div>
 <% end %>

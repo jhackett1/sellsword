@@ -43,7 +43,7 @@ a{
 .page-title{
     font-size: 2em;
     font-weight: 400;
-    letter-spacing: -1px;
+    letter-spacing: -1.4px;
     margin-bottom: 25px;
 }
 .page-intro{
@@ -67,6 +67,8 @@ a{
     background: linear-gradient(45deg, $blue, $blue2);
     box-shadow: 0px 4px 3px -1px transparentize($shadowBlue,0.8);
     transition: 0.2s cubic-bezier(.22,.68,0,1.71);
+    // In case element is button
+    border: none;
     &:hover{
         transform: translateY(1px);
         filter: brightness(1.1);
@@ -84,4 +86,31 @@ a{
     margin-bottom: 15px;
     // In case panel is an anchor element
     text-decoration: none;
+}
+.panel__title{
+    font-weight: 400;
+    font-size: 1.3em;
+    margin-bottom: 25px;
+    letter-spacing: -0.7px
+}
+
+// Grids
+.two-column-grid{
+    @media screen and (min-width: 800px){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 15px;
+    }
+}
+.three-column-grid{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    @media screen and (min-width: 800px){
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 15px;
+    }
+}
+.span-two-thirds{
+    grid-column: 1 / 3;
 }

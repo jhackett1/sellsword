@@ -1,7 +1,11 @@
-<main class="new-project container">
-    <h1 class="page-title">Create a new project</h1>
-    <div class="panel">
-    <%= render 'form', project: @project %>
-    <%= link_to 'Back', projects_path %>
-    </div>
-</main>
+<div class="three-column-grid container">
+
+    <main class="span-two-thirds">
+        <h1 class="page-title">Create a new project</h1>
+        <div class="panel">
+            <h3 class="panel__title">About the client</h3>
+            <%= render 'form', project: @project %>
+        </div>
+    </main>
+
+</div>
