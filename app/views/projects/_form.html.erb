@@ -3,8 +3,8 @@
   <%# Error summary %>
   <% if project.errors.any? %>
     <div class="alert alert--error">
-      <h2><%= pluralize(project.errors.count, "error") %> prevented this project from being saved</h2>
-      <ul>
+      <h4 class="alert__title"><%= pluralize(project.errors.count, "error") %> prevented this project from being saved</h4>
+      <ul class="alert__message">
       <% project.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
@@ -12,22 +12,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-field">
+    <%= form.label(:name, "Client name", {class: "form-label"}) %>
+    <%= form.text_field(:name, {class: "form-input", required: true}) %>
+
+
   </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+  <div class="form-field">
+    <%= form.label(:email, "Billing email", {class: "form-label"}) %>
+    <%= form.email_field(:email, {class: "form-input", required: true}) %>
+    <p class="form-hint">Invoices will be sent to this address</p>
   </div>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_area :address %>
+  <div class="form-field">
+    <%= form.label(:address, "Other contact details", {class: "form-label form-label--optional"}) %>
+    <%= form.text_area(:address, {class: "form-input", rows: "4"}) %>
+    <p class="form-hint">Optional. Will be printed on invoices</p>
   </div>
 
-  <div class="actions">
-    <%= form.submit(class: "button") %>
-  </div>
+  <%= form.submit(class: "button") %>
+
 <% end %>

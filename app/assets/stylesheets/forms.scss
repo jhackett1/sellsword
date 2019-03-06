@@ -1,0 +1,26 @@
+.form-input{
+    width: 100%;
+    border: 1px solid transparentize($grey2, 0.5);
+    background: none;
+    border-radius: 6px;
+    font-size: 1em;
+    padding: 12px;
+    color: $grey;
+    display: block;
+}
+
+.form-field{
+    margin-bottom: 30px;
+}
+
+.form-label{
+    display: inline-block;
+    margin-bottom: 5px;
+    color: $grey;
+}
+
+.form-hint{
+    color: $grey2;
+    font-size: 0.9em;
+    margin-top: 5px;
+}

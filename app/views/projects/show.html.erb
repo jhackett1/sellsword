@@ -6,3 +6,5 @@
 
 <p><strong>Email:</strong><%= @project.email %>
 <strong>Address:</strong><%= @project.address %>
+
+<%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } %>
