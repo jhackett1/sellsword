@@ -5,11 +5,10 @@
   <%= link_to 'New project', new_project_path, {class: "button"} %>
   <div class="recent-projects__list">
     <% @projects.each do |project| %>
-      <div class="recent-projects__project panel">
+      <%= link_to(project, {class: "recent-projects__project panel"}) do %>
         <h3 class="recent-projects__name"><%= project.name %></h3>
-        <td>Created <%= time_ago_in_words project.created_at %> ago</td>
-        <td><%= link_to 'Show', project %></td>
-      </div>
+        <p class="recent-projects__published">Created <%= time_ago_in_words(project.created_at) %> ago</p>
+      <% end %>
     <% end %>
   </div>
 </section>

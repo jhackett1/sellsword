@@ -1,19 +1,8 @@
+
+<p class="page-intro">Project</p>
+<h1 class="page-title"><%= @project.name %></h1> <%= link_to 'Edit', edit_project_path(@project) %>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @project.email %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @project.address %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<p><strong>Email:</strong><%= @project.email %>
+<strong>Address:</strong><%= @project.address %>

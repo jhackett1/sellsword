@@ -1,5 +1,7 @@
-<h1>New Project</h1>
-
-<%= render 'form', project: @project %>
-
-<%= link_to 'Back', projects_path %>
+<main class="new-project container">
+    <h1 class="page-title">Create a new project</h1>
+    <div class="panel">
+    <%= render 'form', project: @project %>
+    <%= link_to 'Back', projects_path %>
+    </div>
+</main>

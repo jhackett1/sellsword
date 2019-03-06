@@ -16,8 +16,8 @@ body{
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 // Grey text by default
@@ -33,18 +33,55 @@ a{
     }
 }
 
+// Section & page titles and intros
+.section-title{
+    font-size: 1.5em;
+    font-weight: 400;
+    letter-spacing: -1px;
+    margin-bottom: 15px;
+}
+.page-title{
+    font-size: 2em;
+    font-weight: 400;
+    letter-spacing: -1px;
+    margin-bottom: 25px;
+}
+.page-intro{
+    font-size: 1.3em;
+    font-weight: 400;
+    color: $grey2;
+    // letter-spacing: -1px;
+    // margin-bottom: 5px;
+}
+
+
+// Buttons
 .button{
     display: inline-block;
+    margin-bottom: 15px;
     border-radius: 6px;
     padding: 17px 27px;
     color: white;
     text-decoration: none;
     font-size: 0.95em;
     background: linear-gradient(45deg, $blue, $blue2);
-    box-shadow: 0px 7px 6px -6px rgba(0,0,0,0.25);
-    transition: 0.1s cubic-bezier(.57,.21,.69,1.25);
+    box-shadow: 0px 4px 3px -1px transparentize($shadowBlue,0.8);
+    transition: 0.2s cubic-bezier(.22,.68,0,1.71);
     &:hover{
+        transform: translateY(1px);
         filter: brightness(1.1);
+        box-shadow: 0px 3px 3px -1px transparentize($shadowBlue,0.8);
     }
+}
 
+// Raised panels
+.panel{
+    display: block;
+    background-color: white;
+    border-radius: 6px;
+    padding: 25px;
+    box-shadow: 0px 4px 3px -1px transparentize($shadowBlue,0.8);
+    margin-bottom: 15px;
+    // In case panel is an anchor element
+    text-decoration: none;
 }
