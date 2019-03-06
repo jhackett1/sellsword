@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 2019_03_06_211542) do
   create_table "projects", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
-    t.text "address", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
