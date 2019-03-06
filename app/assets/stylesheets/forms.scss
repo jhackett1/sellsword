@@ -1,5 +1,6 @@
 .form-input{
     width: 100%;
+    max-width: 100%;
     border: 1px solid transparentize($grey2, 0.5);
     background: none;
     border-radius: 6px;
@@ -7,6 +8,10 @@
     padding: 12px;
     color: $grey;
     display: block;
+}
+
+.form-input--limited-width{
+    max-width: 400px;
 }
 
 .form-field{

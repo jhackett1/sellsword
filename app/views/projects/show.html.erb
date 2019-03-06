@@ -1,10 +1,24 @@
 
+<div class="container project">
 <p class="page-intro">Project</p>
-<h1 class="page-title"><%= @project.name %></h1> <%= link_to 'Edit', edit_project_path(@project) %>
+<h1 class="page-title"><%= @project.name %></h1>
 
-<p id="notice"><%= notice %></p>
+<% if notice %>
+    <p id="notice" class="alert"><%= notice %></p>
+<% end %>
 
-<p><strong>Email:</strong><%= @project.email %>
-<strong>Address:</strong><%= @project.address %>
+<details class="client-details">
+    <summary class="client-details__summary">See client details</summary>
 
-<%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <h5>Billing email</h5>
+    <p><%= @project.email %></p>
+
+    <h5>Other contact details</h5>
+    <p><%= @project.address %></p>
+    
+    <%= link_to 'Edit', edit_project_path(@project) %>
+    <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } %>
+    
+</details>
+
+</div>

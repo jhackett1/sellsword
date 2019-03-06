@@ -14,14 +14,14 @@
 
   <div class="form-field">
     <%= form.label(:name, "Client name", {class: "form-label"}) %>
-    <%= form.text_field(:name, {class: "form-input", required: true}) %>
+    <%= form.text_field(:name, {class: "form-input form-input--limited-width", required: true}) %>
 
 
   </div>
 
   <div class="form-field">
     <%= form.label(:email, "Billing email", {class: "form-label"}) %>
-    <%= form.email_field(:email, {class: "form-input", required: true}) %>
+    <%= form.email_field(:email, {class: "form-input form-input--limited-width", required: true}) %>
     <p class="form-hint">Invoices will be sent to this address</p>
   </div>
 

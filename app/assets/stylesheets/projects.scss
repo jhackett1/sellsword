@@ -8,6 +8,13 @@
     }
 }
 
+.recent-projects__project{
+    margin-bottom: 15px;
+    &:last-of-type{
+        margin-bottom: 0px;
+    }
+}
+
 .recent-projects__name{
     font-size: 1.3em;
     margin-bottom: 10px;
@@ -17,8 +24,3 @@
     color: $grey2;
 }
 
-// New
-.new-project{
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
