@@ -1,11 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-
 <section class="recent-projects container">
   <h2 class="section-title recent-projects__title">Recent projects</h2>
-
-  <%= link_to 'New project', new_project_path %>
-
+  <%= link_to 'New project', new_project_path, {class: "button"} %>
   <div class="recent-projects__list">
     <% @projects.each do |project| %>
       <div class="recent-projects__project panel">
@@ -15,5 +12,4 @@
       </div>
     <% end %>
   </div>
-
 </section>

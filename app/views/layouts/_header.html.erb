@@ -1,7 +1,7 @@
 <header class="site-header">
     <div class="container">
         <%= link_to(root_path, {class: "site-header__brand"}) do %>
-            <img class="site-header__logo" src="/assets/logo.svg" alt="Sellsword">
+            <%= image_tag("logo.svg", alt: "Sellsword", class: "site-header__logo") %>
             <h1 class="site-header__title">Sellsword</h1>
         <% end %>
     </div>

@@ -32,3 +32,19 @@ a{
         text-decoration: none;
     }
 }
+
+.button{
+    display: inline-block;
+    border-radius: 6px;
+    padding: 17px 27px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.95em;
+    background: linear-gradient(45deg, $blue, $blue2);
+    box-shadow: 0px 7px 6px -6px rgba(0,0,0,0.25);
+    transition: 0.1s cubic-bezier(.57,.21,.69,1.25);
+    &:hover{
+        filter: brightness(1.1);
+    }
+
+}
