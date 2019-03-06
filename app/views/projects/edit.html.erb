@@ -1,4 +1,4 @@
-<div class="three-column-grid container">
+<div class="three-column-grid">
 
     <main class="span-two-thirds">
         <h1 class="page-title">Editing project</h1>
@@ -6,7 +6,9 @@
             <h3 class="panel__title">About the client</h3>
             <%= render 'form', project: @project %>
             
-            <%= link_to 'Show', @project %> | <%= link_to 'Back', projects_path %>
+            <%= link_to 'Show', @project, {class: "inline-interaction"} %>
+            
+            <%= link_to 'Back', projects_path, {class: "inline-interaction"} %>
         </div>
     </main>
 

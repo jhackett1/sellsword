@@ -19,6 +19,15 @@ body{
     padding-left: 15px;
     padding-right: 15px;
 }
+// Vertically padded area
+.main-content{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    @media screen and (min-width: 800px){
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}
 
 // Grey text by default
 h1, h2, h3, h4, h5, h6, p{
@@ -51,6 +60,9 @@ a{
         margin-bottom: 35px;
     }
 }
+.page-title--with-lede{
+    margin-bottom: 15px;
+}
 .page-intro{
     font-size: 1.3em;
     font-weight: 400;
@@ -67,8 +79,11 @@ a{
     border-radius: 6px;
     padding: 17px 27px;
     color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8em;
     text-decoration: none;
-    font-size: 0.95em;
     background: linear-gradient(45deg, $blue, $blue2);
     box-shadow: 0px 4px 3px -1px transparentize($shadowBlue,0.8);
     transition: 0.2s cubic-bezier(.22,.68,0,1.71);
@@ -79,6 +94,16 @@ a{
         filter: brightness(1.1);
         box-shadow: 0px 3px 3px -1px transparentize($shadowBlue,0.8);
     }
+}
+
+.inline-interaction{
+    display: inline-block;
+    margin-right: 10px;
+    color: $blue;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9em;
 }
 
 // Raised panels
@@ -115,11 +140,7 @@ a{
     }
 }
 .three-column-grid{
-    padding-top: 40px;
-    padding-bottom: 40px;
     @media screen and (min-width: 800px){
-        padding-top: 80px;
-        padding-bottom: 80px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-column-gap: 15px;
