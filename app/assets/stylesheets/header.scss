@@ -1,3 +1,23 @@
 .site-header{
     background-color: $blue;
+    padding: 15px 0px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.16)
+}
+
+.site-header__brand{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+}
+
+.site-header__logo{
+    max-width: 40px;
+    margin-right: 10px;
+}
+
+.site-header__title{
+    font-size: 1.1em;
+    font-weight: 400;
+    color: white;
 }
