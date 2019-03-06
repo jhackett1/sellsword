@@ -1,3 +1,14 @@
 .site-footer{
     background-color: $grey;
+    padding: 20px 0px;
+}
+
+.site-footer__copyright{
+    color: white;
+    opacity: 0.5;
+    font-size: 0.9em;
+}
+
+.site-footer__copyright a{
+    color: white;
 }
