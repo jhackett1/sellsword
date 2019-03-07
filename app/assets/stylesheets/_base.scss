@@ -44,9 +44,9 @@ a{
 
 // Section & page titles and intros
 .section-title{
-    font-size: 1.5em;
+    font-size: 1.6em;
     font-weight: 400;
-    letter-spacing: -1px;
+    letter-spacing: -1.1px;
     margin-bottom: 15px;
 }
 .page-title{
@@ -67,7 +67,7 @@ a{
     font-size: 1.3em;
     font-weight: 400;
     color: $grey2;
-    // letter-spacing: -1px;
+    letter-spacing: -1px;
     // margin-bottom: 5px;
 }
 
@@ -127,7 +127,7 @@ a{
     @media screen and (min-width: 800px){
         margin-bottom: 50px;
         font-size: 1.6em;
-        letter-spacing: -1px;
+        letter-spacing: -1.1px;
     }
 }
 
