@@ -1,0 +1,36 @@
+.dialog{
+    background: white;
+    max-width: 600px;
+    margin: 0 30px;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    border-radius: 6px;
+    border: none;
+    overflow: hidden;
+    @media screen and (min-width: 600px){
+        top: 120px;
+        margin: 0px auto;
+    }
+    &::backdrop{
+        background: transparentize($grey, 0.5);
+        // animation: fadeIn 0.2s ease-out;
+    }
+}
+
+.dialog__body{
+    padding: 25px;
+    @media screen and (min-width: 600px){
+        padding: 40px;
+    }
+}
+
+.dialog__footer{
+    padding: 25px;
+    background-color: $bg;
+    @media screen and (min-width: 600px){
+        padding: 40px;
+    }
+}

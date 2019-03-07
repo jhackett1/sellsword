@@ -1,24 +1,30 @@
 
     <p class="page-intro">Project</p>
     <h1 class="page-title page-title--with-lede"><%= @project.name %></h1>
+    <button class="inline-interaction" id="show-project-details">See client details</button>
 
 
-    <details class="project-details">
-        <summary class="project-details__summary">See client details</summary>
+    <dialog id="project-details-dialog" class="dialog">
+        <div class="dialog__body">
+            <h3>Project details</h3>
+            <h5>Billing email</h5>
+            <p><%= @project.email %></p>
+            <% if @project.address.length > 0 %>
+                <h5>Other contact details</h5>
+                <p><%= @project.address %></p>
+            <% end %>
+        </div>
+        <footer class="dialog__footer">
+            <%= link_to 'Edit', edit_project_path(@project), {class: "inline-interaction"} %>
+            <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }, class: "inline-interaction" %>
+        </footer>
+    </dialog>
 
-        <h5>Billing email</h5>
-        <p><%= @project.email %></p>
-
-        <% if @project.address.length > 0 %>
-            <h5>Other contact details</h5>
-            <p><%= @project.address %></p>
-        <% end %>
-        
-        <%= link_to 'Edit', edit_project_path(@project), {class: "inline-interaction"} %>
-        <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }, class: "inline-interaction" %>
-        
-    </details>
 
     <% if notice %>
         <p id="notice" class="alert"><%= notice %></p>
     <% end %>
+
+    <section class="hours">
+        <h2 class="section-title">Hours</h2>
+    </section>
