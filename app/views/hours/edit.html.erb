@@ -1,0 +1,27 @@
+<div class="three-column-grid">
+
+    <main class="span-two-thirds">
+        <h1 class="page-title">Editing hours</h1>
+        <div class="panel">
+
+<%= form_for @hour do |form| %>
+    <div class="form-field">
+        <%= form.label(:hours, "Hours worked", {class: "form-label"}) %>
+        <%= form.number_field(:hours, {class: "form-input", min: "0.5", step: "0.5", required: "true"}) %>
+    </div>
+    <div class="form-field">
+        <%= form.label(:date, "On date", {class: "form-label"}) %>
+        <%= form.date_field(:date, {class: "form-input form-input--date", required: "true"}) %>
+    </div>
+    <div class="form-field">
+        <%= form.label(:description, "Describe the work", {class: "form-label"}) %>
+        <p class="form-optional">Optional</p>
+        <%= form.text_area(:description, {class: "form-input"}) %>
+    </div>
+    <%= form.submit("Add hours", {class: "button button--filled"}) %>
+<% end %>
+
+        </div>
+    </main>
+
+</div>

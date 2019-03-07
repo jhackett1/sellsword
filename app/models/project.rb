@@ -12,4 +12,8 @@ class Project < ApplicationRecord
         @total
     end
 
+    def ref_no
+        self.created_at.year.to_s + self.created_at.month.to_s
+    end
+
 end

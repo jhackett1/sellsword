@@ -4,7 +4,7 @@
         <div class="two-column-grid">
             <div class="form-field">
                 <%= form.label(:hours, "Hours worked", {class: "form-label"}) %>
-                <%= form.number_field(:hours, {class: "form-input", min: "0.5", step: "0.5"}) %>
+                <%= form.number_field(:hours, {class: "form-input", min: "0.5", step: "0.5", required: "true"}) %>
             </div>
             <div class="form-field">
                 <%= form.label(:date, "On date", {class: "form-label"}) %>
