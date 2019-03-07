@@ -10,6 +10,11 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+
+    puts @project.total_hours
+
+    @hour = @project.hours.build
+    @hours = @project.hours.order("created_at DESC").limit(6)
   end
 
   # GET /projects/new

@@ -1,0 +1,30 @@
+// Buttons
+.button{
+    display: inline-block;
+    // margin-bottom: 15px;
+    border-radius: 6px;
+    padding: 17px 27px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    text-decoration: none;
+    transition: 0.2s cubic-bezier(.22,.68,0,1.71);
+    // In case element is button
+    border: none;
+}
+
+.button--filled{
+    color: white;
+    background: linear-gradient(45deg, $blue, $blue2);
+    box-shadow: 0px 4px 3px -1px transparentize($shadowBlue,0.8);
+    &:hover{
+        transform: translateY(1px);
+        filter: brightness(1.1);
+        box-shadow: 0px 3px 3px -1px transparentize($shadowBlue,0.8);
+    }
+}
+
+.button--outline{
+    border: 1px solid $blue;
+    color: $blue;
+}

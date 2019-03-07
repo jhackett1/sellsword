@@ -3,10 +3,14 @@
     <h1 class="page-title page-title--with-lede"><%= @project.name %></h1>
     <button class="inline-interaction" id="show-project-details">See client details</button>
 
+    <% if notice %>
+        <p id="notice" class="alert"><%= notice %></p>
+    <% end %>
 
     <dialog id="project-details-dialog" class="dialog">
+        <button class="dialog__close" id="project-details-dialog"><%= image_tag('cross.svg') %></button>
         <div class="dialog__body">
-            <h3>Project details</h3>
+            <h3 class="section-title dialog__title">Project details</h3>
             <h5>Billing email</h5>
             <p><%= @project.email %></p>
             <% if @project.address.length > 0 %>
@@ -15,16 +19,12 @@
             <% end %>
         </div>
         <footer class="dialog__footer">
-            <%= link_to 'Edit', edit_project_path(@project), {class: "inline-interaction"} %>
-            <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }, class: "inline-interaction" %>
+            <%= link_to 'Edit details', edit_project_path(@project), {class: "button button--outline"} %>
+            <%# <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }, class: "inline-interaction" %>
         </footer>
     </dialog>
 
+    <%= render 'hours/recent-hours'%>
 
-    <% if notice %>
-        <p id="notice" class="alert"><%= notice %></p>
-    <% end %>
 
-    <section class="hours">
-        <h2 class="section-title">Hours</h2>
-    </section>
+

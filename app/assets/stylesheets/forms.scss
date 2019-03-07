@@ -10,11 +10,19 @@
     display: block;
 }
 
+.form-input--date{
+    height: 45px;
+}
+
 .form-input--limited-width{
     max-width: 400px;
 }
 
 .form-field{
+    margin-bottom: 30px;
+}
+
+.form-field--with-bottom-margin{
     margin-bottom: 40px;
     @media screen and (min-width: 800px){
         margin-bottom: 50px;
@@ -24,7 +32,7 @@
 .form-label{
     display: inline-block;
     margin-bottom: 7px;
-    color: $grey2;
+    color: $grey;
 }
 
 .form-hint{

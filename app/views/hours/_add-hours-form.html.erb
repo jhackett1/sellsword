@@ -1,0 +1,23 @@
+<%= form_for [@project, @hour] do |form| %>
+    <div class="dialog__body">
+        <h3 class="section-title dialog__title">Add hours</h3>
+        <div class="two-column-grid">
+            <div class="form-field">
+                <%= form.label(:hours, "Hours worked", {class: "form-label"}) %>
+                <%= form.number_field(:hours, {class: "form-input", min: "0.5", step: "0.5"}) %>
+            </div>
+            <div class="form-field">
+                <%= form.label(:date, "On date", {class: "form-label"}) %>
+                <%= form.date_field(:date, {class: "form-input form-input--date", required: "true"}) %>
+            </div>
+        </div>
+        <div class="form-field">
+            <%= form.label(:description, "Describe the work", {class: "form-label"}) %>
+            <p class="form-optional">Optional</p>
+            <%= form.text_area(:description, {class: "form-input"}) %>
+        </div>
+    </div>
+    <footer class="dialog__footer">
+        <%= form.submit("Add hours", {class: "button button--filled"}) %>
+    </footer>    
+<% end %>

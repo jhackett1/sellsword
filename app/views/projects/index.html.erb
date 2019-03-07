@@ -2,12 +2,20 @@
 
 <section class="recent-projects">
   <h2 class="section-title recent-projects__title">Recent projects</h2>
-  <%= link_to 'New project', new_project_path, {class: "button"} %>
+  <div class="recent-projects__controls">
+    <%= link_to 'New project', new_project_path, {class: "button button--filled"} %>
+  </div>
   <div class="recent-projects__list">
     <% @projects.each do |project| %>
       <%= link_to(project, {class: "recent-projects__project panel"}) do %>
         <h3 class="recent-projects__name"><%= project.name %></h3>
         <p class="recent-projects__published">Created <%= time_ago_in_words(project.created_at) %> ago</p>
+      
+        <blockquote>
+          <q><%= project.total_hours %></q>
+          <cite>Hours worked so far</cite>
+        </blockquote>
+
       <% end %>
     <% end %>
   </div>

@@ -72,30 +72,6 @@ a{
     // margin-bottom: 5px;
 }
 
-
-// Buttons
-.button{
-    display: inline-block;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    padding: 17px 27px;
-    color: white;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.8em;
-    text-decoration: none;
-    background: linear-gradient(45deg, $blue, $blue2);
-    box-shadow: 0px 4px 3px -1px transparentize($shadowBlue,0.8);
-    transition: 0.2s cubic-bezier(.22,.68,0,1.71);
-    // In case element is button
-    border: none;
-    &:hover{
-        transform: translateY(1px);
-        filter: brightness(1.1);
-        box-shadow: 0px 3px 3px -1px transparentize($shadowBlue,0.8);
-    }
-}
-
 .inline-interaction{
     display: inline-block;
     margin-right: 10px;
@@ -135,7 +111,7 @@ a{
     @media screen and (min-width: 800px){
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-column-gap: 15px;
+        grid-column-gap: 30px;
     }
 }
 .three-column-grid{

@@ -1,11 +1,18 @@
-const showHideModal = () => {
-    const button = document.getElementById('show-project-details')
-    const dialog = document.getElementById('project-details-dialog')
+const showHideModal = (buttonId, dialogId) => {
+    const button = document.getElementById(buttonId)
+    const dialog = document.getElementById(dialogId)
+    const close = dialog.querySelector(".dialog__close")
     button.addEventListener('click', ()=>{
         dialog.showModal()
+        close.addEventListener("click", hideModal)
     })
+    const hideModal = () => {
+        dialog.close()
+        close.removeEventListener("click", hideModal)
+    }
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{
-    showHideModal()
+    showHideModal('show-project-details', 'project-details-dialog')
+    showHideModal('show-add-hours', 'add-hours-dialog')
 })

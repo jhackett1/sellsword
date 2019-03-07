@@ -12,26 +12,24 @@
     </div>
   <% end %>
 
-  <div class="form-field">
+  <div class="form-field form-field--with-bottom-margin">
     <%= form.label(:name, "Client name", {class: "form-label"}) %>
     <%= form.text_field(:name, {class: "form-input form-input--limited-width", required: true}) %>
-
-
   </div>
 
-  <div class="form-field">
+  <div class="form-field form-field--with-bottom-margin">
     <%= form.label(:email, "Billing email", {class: "form-label"}) %>
     <%= form.email_field(:email, {class: "form-input form-input--limited-width", required: true}) %>
     <p class="form-hint">Invoices will be sent here</p>
   </div>
 
-  <div class="form-field">
+  <div class="form-field form-field--with-bottom-margin">
     <%= form.label(:address, "Other contact details", {class: "form-label form-label--optional"}) %>
     <p class="form-optional">Optional</p>
     <%= form.text_area(:address, {class: "form-input", rows: "4"}) %>
     <p class="form-hint">Will be printed on invoices</p>
   </div>
 
-  <%= form.submit("Create & finish", {class: "button"}) %>
+  <%= form.submit("Create & finish", {class: "button button--filled"}) %>
 
 <% end %>

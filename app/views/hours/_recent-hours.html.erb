@@ -1,0 +1,18 @@
+<section class="recent hours">
+    <h2 class="section-title">Recent hours</h2>
+    <div class="recent-hours__controls">
+        <button class="button button--filled" id="show-add-hours">Add hours</button>
+    </div>
+    <div class="two-column-grid recent-hours__list">
+    <% @hours.each do |hour| %>
+        <li class="recent-hours__hours panel">
+            <h3><%= hour.hours %> hours</h3>
+            <p><%= hour.description %></p>
+        </li>
+    <% end %>
+</section>
+
+<dialog id="add-hours-dialog" class="dialog">
+    <button class="dialog__close" id="close-add-hours-dialog"><%= image_tag('cross.svg') %></button>
+    <%= render 'hours/add-hours-form' %>
+</dialog>
