@@ -4,7 +4,8 @@
         <h1 class="page-title">Editing hours</h1>
         <div class="panel">
 
-<%= form_for @hour do |form| %>
+<%= form_with model: [@project, @hour] do |form| %>
+
     <div class="form-field">
         <%= form.label(:hours, "Hours worked", {class: "form-label"}) %>
         <%= form.number_field(:hours, {class: "form-input", min: "0.5", step: "0.5", required: "true"}) %>
@@ -18,8 +19,10 @@
         <p class="form-optional">Optional</p>
         <%= form.text_area(:description, {class: "form-input"}) %>
     </div>
-    <%= form.submit("Add hours", {class: "button button--filled"}) %>
+    <%= form.submit("Update", {class: "button button--filled"}) %>
 <% end %>
+
+            <%= link_to("Remove", project_hour_path(@project, @hour), method: :delete, data: {confirm: "Are you sure?"}) %>
 
         </div>
     </main>

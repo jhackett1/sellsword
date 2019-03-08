@@ -26,6 +26,12 @@
                     <h5 class="project-details__title">Reference number</h5>
                     <p><%= @project.ref_no %></p>
                 </aside>
+
+                <aside class="project-details__detail">
+                    <h5 class="project-details__title">Created</h5>
+                    <p><%= time_ago_in_words(@project.created_at) %> ago</p>
+                </aside>
+
             </div>
         </div>
         <footer class="dialog__footer">

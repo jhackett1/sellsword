@@ -6,9 +6,9 @@
     <div class="two-column-grid recent-hours__list">
     <% @hours.each do |hour| %>
         <li class="recent-hours__hours panel">
-            <h3><%= hour.hours %> hours</h3>
+            <h3><%= hour.id %>. <%= hour.hours %> hours</h3>
             <p><%= hour.description %></p>
-            <%# <%= link_to("Amend", edit_project_hour_path([@project, hour])) %>
+            <%= link_to("Amend", edit_project_hour_path(@project, hour), {class: "inline-interaction"}) %>
         </li>
     <% end %>
 </section>

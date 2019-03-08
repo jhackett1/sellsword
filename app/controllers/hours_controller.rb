@@ -1,6 +1,6 @@
 class HoursController < ApplicationController
-    before_action :set_project, only: [:create, :edit]
-    # before_action :set_hour, only: [:edit]
+    before_action :set_project, only: [:create, :edit, :update, :destroy]
+    before_action :set_hour, only: [:edit, :update, :destroy]
 
     # GET
     # Show all hours under particular project
@@ -24,30 +24,50 @@ class HoursController < ApplicationController
 
     # GET
     # Update existing hours
-    # def edit
-    # end
+    def edit
+    end
 
 
     # PATCH
     # Update existing hours
-    # def update
-    # end
+    def update
+
+      puts @project.id
+      puts @hour.id
+
+      respond_to do |format|
+        if @hour.update(hour_params)
+          format.html { redirect_to @project, notice: 'Hours successfully amended.' }
+          format.json { render :show, status: :ok, location: @hour }
+        else
+          format.html { redirect_to @project }
+          format.json { render json: @hour.errors, status: :unprocessable_entity }
+        end
+      end
+    end
 
     # DELETE
     # Remove hours
-    # def destroy
-    # end
+    def destroy
+      @hour.destroy
+      respond_to do |format|
+        format.html { redirect_to @project, notice: 'Hours successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    end
+
+
 
 
     private
 
     def set_project
-        @project = Project.find(params[:project_id])
+      @project = Project.find(params[:project_id])
     end
 
-    # def set_hour
-    #   @hour = @project.hours.find(params[:id])
-    # end
+    def set_hour
+      @hour = @project.hours.find(params[:id])
+    end
 
     def hour_params
         params.require(:hour).permit(:description, :hours, :date, :project_id)
