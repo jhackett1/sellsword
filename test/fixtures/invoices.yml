@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  discount: 1.5
+  project: one
+
+two:
+  discount: 1.5
+  project: two

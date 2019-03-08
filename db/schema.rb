@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_08_182354) do
+ActiveRecord::Schema.define(version: 2019_03_08_185455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "charges", force: :cascade do |t|
+    t.string "description", null: false
+    t.text "notes"
+    t.float "rate", null: false
+    t.float "hours", null: false
+    t.bigint "invoice_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["invoice_id"], name: "index_charges_on_invoice_id"
+  end
 
   create_table "hours", force: :cascade do |t|
     t.string "description"
@@ -25,6 +36,14 @@ ActiveRecord::Schema.define(version: 2019_03_08_182354) do
     t.index ["project_id"], name: "index_hours_on_project_id"
   end
 
+  create_table "invoices", force: :cascade do |t|
+    t.float "discount"
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_invoices_on_project_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
@@ -33,5 +52,7 @@ ActiveRecord::Schema.define(version: 2019_03_08_182354) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "charges", "invoices"
   add_foreign_key "hours", "projects"
+  add_foreign_key "invoices", "projects"
 end
