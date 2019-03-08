@@ -3,9 +3,9 @@ class HoursController < ApplicationController
     before_action :set_hour, only: [:edit, :update, :destroy]
 
     def create
-      @hour = @project.hours.new(hour_params)
+      @hour = @project.hours.build(hour_params)
       if @hour.save
-        redirect_to @project, notice: 'Hour was successfully created.'
+        redirect_to @project, notice: 'Hours successfully created.'
       else
         redirect_to @project, notice: 'There was a problem.'
       end
@@ -18,13 +18,13 @@ class HoursController < ApplicationController
       if @hour.update(hour_params)
         redirect_to @project, notice: 'Hours successfully amended.'
       else
-        redirect_to @project
+        redirect_to @project, notice: 'There was a problem.'
       end
     end
 
     def destroy
       @hour.destroy
-      redirect_to @project, notice: 'Hours successfully destroyed.'
+      redirect_to @project, notice: 'Hours successfully removed.'
     end
 
     private
@@ -38,7 +38,7 @@ class HoursController < ApplicationController
     end
 
     def hour_params
-        params.require(:hour).permit(:description, :hours, :date, :project_id)
+        params.require(:hour).permit(:description, :hours, :date)
     end
 
 end

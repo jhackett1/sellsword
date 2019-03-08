@@ -1,0 +1,31 @@
+<dialog id="project-details-dialog" class="dialog">
+    <button class="dialog__close" id="project-details-dialog"><%= image_tag('cross.svg') %></button>
+    <div class="dialog__body">
+        <h3 class="section-title dialog__title">Project details</h3>
+        <div class="project-details">
+            <aside class="project-details__detail">
+                <h5 class="project-details__title">Billing email</h5>
+                <p><%= @project.email %></p>
+            </aside>
+            <% if @project.address.length > 0 %>
+                <aside class="project-details__detail">
+                    <h5 class="project-details__title">Other contact details</h5>
+                    <p><%= @project.address %></p>
+                </aside>
+            <% end %>
+            <aside class="project-details__detail">
+                <h5 class="project-details__title">Reference number</h5>
+                <p><%= @project.ref_no %></p>
+            </aside>
+
+            <aside class="project-details__detail">
+                <h5 class="project-details__title">Created</h5>
+                <p><%= time_ago_in_words(@project.created_at) %> ago</p>
+            </aside>
+        </div>
+    </div>
+    <footer class="dialog__footer">
+        <%= link_to 'Edit details', edit_project_path(@project), {class: "button button--outline"} %>
+        <%# <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }, class: "inline-interaction" %>
+    </footer>
+</dialog>

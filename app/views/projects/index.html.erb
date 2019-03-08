@@ -12,17 +12,14 @@
           <h3 class="recent-projects__name"><%= project.name %></h3>
           <p class="recent-projects__published">Created <%= time_ago_in_words(project.created_at) %> ago</p>
         </aside> 
-
         <blockquote class="statistic">
           <q class="statistic__stat"><%= project.total_hours %></q>
           <cite class="statistic__caption">Hours worked so far</cite>
         </blockquote>
-
         <blockquote class="statistic">
           <q class="statistic__stat">£XX</q>
           <cite class="statistic__caption">Earned so far</cite>
         </blockquote>
-
       <% end %>
     <% end %>
   </div>
