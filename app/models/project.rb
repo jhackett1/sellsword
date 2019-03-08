@@ -3,7 +3,6 @@ class Project < ApplicationRecord
     validates :email, presence: true
     has_many :hours
 
-    # Total of all hours worked on a project
     def total_hours
         @total = 0
         self.hours.each do |h|
@@ -13,7 +12,8 @@ class Project < ApplicationRecord
     end
 
     def ref_no
-        self.created_at.year.to_s + self.created_at.month.to_s
+        # TODO: Change X to real iterated letter value
+        self.created_at.strftime('%y%m?')
     end
 
 end
