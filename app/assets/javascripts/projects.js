@@ -12,7 +12,7 @@ const showHideModal = (buttonId, dialogId) => {
     }
 }
 
-document.addEventListener("DOMContentLoaded", ()=>{
+document.addEventListener("turbolinks:load", ()=>{
     showHideModal('show-project-details', 'project-details-dialog')
     showHideModal('show-add-hours', 'add-hours-dialog')
 })
