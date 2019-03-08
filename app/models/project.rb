@@ -2,6 +2,7 @@ class Project < ApplicationRecord
     validates :name, presence: true
     validates :email, presence: true
     has_many :hours
+    has_many :invoices
 
     def total_hours
         @total = 0

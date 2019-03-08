@@ -1,12 +1,14 @@
 
-    <p class="page-intro">Project</p>
-    <h1 class="page-title page-title--with-lede"><%= @project.name %></h1>
-    <button class="inline-interaction page-details" id="show-project-details">See client details</button>
+<p class="page-intro">Project</p>
+<h1 class="page-title page-title--with-lede"><%= @project.name %></h1>
+<button class="inline-interaction page-details" id="show-project-details">See client details</button>
 
-    <% if notice %>
-        <p id="notice" class="alert"><%= notice %></p>
-    <% end %>
+<% if notice %>
+    <p id="notice" class="alert"><%= notice %></p>
+<% end %>
 
-    <%= render 'project-details-dialog'%>
+<%= render 'project-details-dialog'%>
 
-    <%= render 'hours/recent-hours'%>
+<%= render 'hours/recent-hours'%>
+
+<%= render 'invoices/recent-invoices'%>
