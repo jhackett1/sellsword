@@ -4,8 +4,8 @@ class Project < ApplicationRecord
     has_many :hours
     has_many :invoices
 
-    def total_hours
-        @total_hours = 0
+    def total_hours_worked
+        total_hours = 0
         self.hours.each do |h|
             @total_hours += h.hours
         end
@@ -13,11 +13,19 @@ class Project < ApplicationRecord
     end
 
     def total_earned
-        @total_earned = 0
+        total_earned = 0
         self.invoices.each do |h|
-            @total_earned += h.total
+            total_earned += h.total
         end
-        @total_earned
+        total_earned
+    end
+
+    def total_hours_invoiced
+        total_invoiced = 0
+        self.invoices.each do |h|
+            total_invoiced += h.hours
+        end
+        total_invoiced
     end
 
     def ref_no

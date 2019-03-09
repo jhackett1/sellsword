@@ -4,16 +4,15 @@ class Invoice < ApplicationRecord
   accepts_nested_attributes_for :charges
 
   def subtotal
-    @subtotal = 0
+    subtotal = 0
     self.charges.each do |c|
-        @subtotal += c.hours * c.rate
+        subtotal += c.hours * c.rate
     end
-    @subtotal
+    subtotal
   end
 
   def total
     self.subtotal - self.discount
   end
-
 
 end
