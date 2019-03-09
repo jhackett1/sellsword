@@ -1,21 +1,23 @@
 class InvoicesController < ApplicationController
     before_action :set_project
 
+
     def new
         @invoice = @project.invoices.new
-        1.times { @invoice.charges.new }
+        @invoice.charges.new
     end
 
     def create
-
-        puts invoice_params
-
         @invoice = @project.invoices.build(invoice_params)
         if @invoice.save
           redirect_to @project, notice: 'Invoice successfully created.'
         else
           redirect_to @project, notice: 'There was a problem.'
         end
+    end
+
+    def show
+        @invoice = @project.invoices.find(params[:id])
     end
 
     private

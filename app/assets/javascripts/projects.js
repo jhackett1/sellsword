@@ -1,11 +1,14 @@
 const showHideModal = (buttonId, dialogId) => {
-    const button = document.getElementById(buttonId)
-    const dialog = document.getElementById(dialogId)
-    const close = dialog.querySelector(".dialog__close")
-    button.addEventListener('click', ()=>{
-        dialog.showModal()
-        close.addEventListener("click", hideModal)
-    })
+    const button = document.querySelector(buttonId)
+    const dialog = document.querySelector(dialogId)
+    if(button && dialog){
+        const close = dialog.querySelector(".dialog__close")
+        button.addEventListener('click', ()=>{
+            dialog.showModal()
+            close.addEventListener("click", hideModal)
+        })
+    }
+
     const hideModal = () => {
         dialog.close()
         close.removeEventListener("click", hideModal)
@@ -13,6 +16,6 @@ const showHideModal = (buttonId, dialogId) => {
 }
 
 document.addEventListener("turbolinks:load", ()=>{
-    showHideModal('show-project-details', 'project-details-dialog')
-    showHideModal('show-add-hours', 'add-hours-dialog')
+    showHideModal('#show-project-details', '#project-details-dialog')
+    showHideModal('#show-add-hours', '#add-hours-dialog')
 })

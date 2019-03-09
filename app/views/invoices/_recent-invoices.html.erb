@@ -4,5 +4,16 @@
         <%= link_to "Create invoice", new_project_invoice_path(@project), {class: "button button--filled"} %>
     </div>
     <div class="two-column-grid recent-invoices__list">
+
+    <% @invoices.each do |invoice| %>
+        <li class="recent-invoices__invoices panel">
+            <h3>ID: <%= invoice.id %></h3>
+            <p>Subtotal: £<%= invoice.subtotal %></p>
+            <p>Discount: £<%= invoice.discount %></p>
+            <p>Total: £<%= invoice.total %></p>
+            <%= link_to "Review invoice", project_invoice_path(@project, invoice) %>
+        </li>
+    <% end %>
+    
     </div>
 </section>

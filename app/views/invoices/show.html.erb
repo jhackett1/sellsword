@@ -1,0 +1,12 @@
+<h3>ID: <%= @invoice.id %></h3>
+<p>Subtotal: £<%= @invoice.subtotal %></p>
+<p>Discount: £<%= @invoice.discount %></p>
+<p>Total: £<%= @invoice.total %></p>
+<p>created <%= time_ago_in_words(@invoice.created_at) %> ago</p>
+
+
+<% @invoice.charges.each do |charge| %>
+    <li>
+        <%= charge.description %>, <%= charge.hours %>, <%= charge.rate %>
+    </li>
+<% end %>

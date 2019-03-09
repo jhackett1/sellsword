@@ -1,59 +1,52 @@
 
 
-        <h1 class="page-title">Create a new invoice</h1>
-        <div class="panel">
+<h1 class="page-title">Create a new invoice</h1>
+<div class="panel">
 
-            <%= form_for [@project, @invoice] do |f| %>
+    <%= form_for [@project, @invoice] do |f| %>
 
-                <div class="form-field">
-                    <%= f.label :discount, {class: "form-label"} %><br/>
-                    <%= f.number_field :discount, {class: "form-input  form-input--limited-width"} %><br/>
-                </div>
-
-                <h3 class="panel__title">Charges</h3>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Description</th>
-                            <th>Notes</th>
-                            <th>Hours worked</th>
-                            <th>Hourly rate</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                    <%= f.fields_for :charges do |ff| %>
-                        <tr>
-                            <td>
-                                <%= ff.text_field :description, {class: "form-input"} %>
-                            </td>
-                            <td>
-                                <%= ff.text_area :notes, {class: "form-input"} %>
-                            </td>
-                            <td>
-                                <%= ff.number_field :hours, {class: "form-input"} %>
-                            </td>
-                            <td>
-                                <%= ff.number_field :rate, {class: "form-input"} %>
-                            </td>
-                        </tr>
-                    <% end %>
-                </table>
-
-
-
-
-
-
-
-
-
-
-
-                <%= f.submit "Create & finish", {class: "button button--filled"} %>
-
-            <% end %>
-
+        <div class="form-field">
+            <%= f.label :discount, {class: "form-label"} %><br/>
+            <%= f.number_field :discount, {class: "form-input  form-input--limited-width", min: 0, step: 0.5} %><br/>
         </div>
+
+        <h3 class="panel__title">Charges</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Notes</th>
+                    <th>Hours worked</th>
+                    <th>Hourly rate</th>
+                </tr>
+            </thead>
+            <tbody id="charges-table-body">
+                <%= f.fields_for :charges do |ff| %>
+                    <tr>
+                        <td>
+                            <%= ff.text_field :description, {class: "form-input", required: "true"} %>
+                        </td>
+                        <td>
+                            <%= ff.text_area :notes, {class: "form-input"} %>
+                        </td>
+                        <td>
+                            <%= ff.number_field :hours, {class: "form-input", required: "true", min: 0, step: 0.5} %>
+                        </td>
+                        <td>
+                            <%= ff.number_field :rate, {class: "form-input", required: "true", min: 0, step: 0.5} %>
+                        </td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+
+        <button class="button button--outline" id="append-charge-row">Add another charge</button>
+
+
+        <%= f.submit "Create & finish", {class: "button button--filled"} %>
+
+    <% end %>
+
+</div>
 

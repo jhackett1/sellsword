@@ -6,8 +6,10 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @hour = @project.hours.build
     @hours = @project.hours.order("created_at DESC").limit(6)
+    @invoices = @project.invoices
+
+    @hour = @project.hours.build
   end
 
   def new
