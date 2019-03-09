@@ -1,6 +1,9 @@
 class InvoicesController < ApplicationController
     before_action :set_project
 
+    def pdf
+        render pdf: "invoice"
+    end
 
     def new
         @invoice = @project.invoices.new
