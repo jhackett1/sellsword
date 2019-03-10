@@ -3,8 +3,8 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
-    @projects = Project.all
-      .where(user_id: current_user.id)
+    @projects = current_user.projects
+      # .where(user_id: current_user.id)
   end
 
   def show
@@ -47,7 +47,7 @@ class ProjectsController < ApplicationController
   private
 
   def set_project
-    @project = Project.find(params[:id])
+    @project = current_user.projects.find(params[:id])
   end
 
   def project_params
