@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simple lil' time logging and invoicing app based on rails.
 
-Things you may want to cover:
+Uses devise for user authentication.
 
-* Ruby version
+Uses this data model:
 
-* System dependencies
+* Users
+** Projects
+***Hours
+***Invoices
+****Charges
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Design isn't quite right, but functionally should work fine.
