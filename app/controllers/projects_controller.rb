@@ -1,8 +1,10 @@
 class ProjectsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
     @projects = Project.all
+      .where(user_id: current_user.id)
   end
 
   def show
@@ -21,6 +23,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @project.user = current_user
       if @project.save
         redirect_to @project, notice: 'Project successfully created.'
       else

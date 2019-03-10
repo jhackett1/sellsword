@@ -3,19 +3,20 @@ class Project < ApplicationRecord
     validates :email, presence: true
     has_many :hours
     has_many :invoices
+    belongs_to :user
 
     def total_hours_worked
         total_hours = 0
         self.hours.each do |h|
-            @total_hours += h.hours
+            total_hours += h.hours
         end
-        @total_hours
+        total_hours
     end
 
     def total_earned
         total_earned = 0
         self.invoices
-            .where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)
+            .where('created_at > ?', 30.days.ago)
             .each do |h|
                 total_earned += h.total
         end
