@@ -14,8 +14,10 @@ class Project < ApplicationRecord
 
     def total_earned
         total_earned = 0
-        self.invoices.each do |h|
-            total_earned += h.total
+        self.invoices
+            .where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)
+            .each do |h|
+                total_earned += h.total
         end
         total_earned
     end
