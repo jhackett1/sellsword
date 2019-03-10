@@ -35,7 +35,7 @@ class HoursController < ApplicationController
     end
 
     def set_hour
-      @hour = @project.hours.find(params[:id])
+      @hour = current_user.projects.hours.find(params[:id])
     end
 
     def hour_params
